@@ -5,14 +5,17 @@
   <title>Video de Vimeo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Estilos para hacer el video responsivo */
+    /* Estilos para hacer el video responsivo con relación 9:16 */
     .video-container {
       position: relative;
-      padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background-color: #000;
+      width: 100%;
+      max-width: 360px; /* Puedes ajustar este valor según tus necesidades */
+      margin: auto;
+    }
+    .video-container::before {
+      content: "";
+      display: block;
+      padding-top: 177.78%; /* 16:9 invertido para 9:16 (100% * 16 / 9) */
     }
     .video-container iframe {
       position: absolute;
